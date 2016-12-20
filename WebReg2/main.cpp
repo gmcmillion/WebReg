@@ -65,8 +65,8 @@ int main()
 	}
     
 	//enroll in some courses to text write to file
-	icsCourseList.searchCoursetoEnroll("36500");
-	icsCourseList.searchCoursetoEnroll("36521");
+	//icsCourseList.searchCoursetoEnroll("36500");
+	//icsCourseList.searchCoursetoEnroll("36521");
 
     //Display All
 	icsCourseList.displayAll();
@@ -92,6 +92,7 @@ int main()
         cin >> num;
         
         //Sign student up for class
+        icsCourseList.searchCoursetoEnroll(num);
         //d.enrollStudentInCourse() ?????
         
         cout << "Would you like to enroll in another course? (Y/N)" << endl;
