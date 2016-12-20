@@ -1,0 +1,119 @@
+ICS 4 Human Factors/Web
+36500
+Lec
+A
+4
+KOBSA, A.
+MW 6:30 - 7:50p
+HIB 100
+Fri, Mar 24, 7:00-9:00pm
+200
+13
+0
+OPEN
+
+ICS 6B Boolean Alg. & Logic
+36520
+Lec
+A
+4
+HAYES, W.
+TuTh 3:30 - 4:50p
+EH 1200
+Tue, Mar 21, 4:00-6:00pm
+320
+0
+0
+OPEN
+
+ICS 6B Boolean Alg. & Logic
+36521
+Dis
+1
+0
+HAYES, W.
+MW 3:00 - 3:50p
+SSL 248
+110
+13
+0
+OPEN
+
+ICS 6B Boolean Alg. & Logic
+36522
+Dis
+2
+0
+HAYES, W.
+MW 4:00 - 4:50p
+SSL 248
+110
+0
+0
+OPEN
+
+ICS 6B Boolean Alg. & Logic
+36523
+Dis
+3
+0
+HAYES, W.
+MW 8:00 - 8:50
+SSL 270
+100
+0
+0
+OPEN
+
+ICS 6D Discrete Math for CS
+36530
+Lec
+A
+4
+IRANI, S.
+MWF 2:00 - 2:50p
+SSLH 100
+Fri, Mar 24, 1:30-3:30pm
+399
+0
+0
+OPEN
+
+ICS 6D Discrete Math for CS
+36531
+Dis
+1
+0
+IRANI, S.
+MW 8:00 - 8:50
+SSL 228
+99
+0
+0
+OPEN
+
+ICS 6D Discrete Math for CS
+36533
+Dis
+3
+0
+IRANI, S.
+MW 7:00 - 7:50p
+ICS 174
+100
+0
+0
+OPEN
+
+ICS 6D Discrete Math for CS
+36534
+Dis
+4
+0
+IRANI, S.
+MW 8:00 - 8:50p
+ICS 174
+100
+0
+0
+OPEN
