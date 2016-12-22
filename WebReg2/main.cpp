@@ -8,6 +8,10 @@
 #include "Student.h"
 using namespace std;
 
+//Function Prototypes
+char menu();
+void enroll(CourseList &);
+
 int main()
 {
 	//Variables
@@ -17,7 +21,8 @@ int main()
 		finalDateTime, maxCapacity, currentEnrollment, 
 		waitListed, status, emptySpace, name;
     int idNum;
-    bool enroll = true;
+    char option;
+    bool exit = true;
 
 	ifstream inputFile("ICS_Classes.txt");      //Input file
     
@@ -64,15 +69,8 @@ int main()
 		icsCourseList.add(&d);	                                //Add DeptCourse to the CourseList
 	}
     
-	//enroll in some courses to text write to file
-	//icsCourseList.searchCoursetoEnroll("36500");
-	//icsCourseList.searchCoursetoEnroll("36521");
-
-    //Display All
-	icsCourseList.displayAll();
-    
     //Get Student Name
-    cout << "\nEnter student name: \n";
+    cout << "Enter student name: \n";
     getline(cin, name);
     
     //Get Id Number
@@ -81,6 +79,73 @@ int main()
 
     //Create a student object
     Student x(name, idNum);
+    
+    //Get choice from welcome menu
+    cout << "\nWelcome to UCI WebReg" << endl;
+    
+    while(exit)
+    {
+        //Get choice from welcome menu
+        option = menu();
+        //Switch statement for each option
+        switch (option)
+        {
+            case 'A':
+            case 'a': icsCourseList.displayAll();     //Display All
+                      break;
+            case 'B':
+            case 'b': enroll(icsCourseList);
+                      break;
+            case 'C':
+            case 'c': //drop course
+                      break;
+            case 'D':
+            case 'd': //view students current course load
+                      break;
+            case 'E':
+            case 'e': cout << "Logging out, Goodbye!" << endl;
+                      exit = false;
+                      break;
+            default: cout << "\nThat is an invalid option, try again\n\n";
+        }
+    }
+    
+	//enroll in some courses to text write to file
+	//icsCourseList.searchCoursetoEnroll("36500");
+	//icsCourseList.searchCoursetoEnroll("36521");
+
+    //Close file
+    inputFile.close();
+
+	//rewrite file before closing
+	//icsCourseList.writeListToFile();
+    
+	//system pause is the visual studio way of pausing a program before exiting
+    system("Pause");
+}
+
+//Welcome menu
+char menu()
+{
+    char opt;
+    
+    //menu
+    cout << "Please select an option below" << endl;
+    cout << "A. Display Available Courses" << endl;
+    cout << "B. Enroll in Course" << endl;
+    cout << "C. Drop a Course" << endl;
+    cout << "D. View current course load" << endl;
+    cout << "E. Exit" << endl;
+    cout << "Enter either A, B, C, D, or E " << endl;
+    cin >> opt;
+    
+    return opt;
+}
+
+//Enroll
+void enroll(CourseList & i)
+{
+    bool enroll = true;
     
     //Loop to enroll in classes
     while (enroll)
@@ -92,7 +157,7 @@ int main()
         cin >> num;
         
         //Sign student up for class
-        icsCourseList.searchCoursetoEnroll(num);
+        i.searchCoursetoEnroll(num);
         //d.enrollStudentInCourse() ?????
         
         cout << "Would you like to enroll in another course? (Y/N)" << endl;
@@ -109,13 +174,4 @@ int main()
         if (choice == 'N' || choice == 'n')
             enroll = false;
     }
-    
-    //Close file
-    inputFile.close();
-
-	//rewrite file before closing
-	//icsCourseList.writeListToFile();
-    
-	//system pause is the visual studio way of pausing a program before exiting
-    system("Pause");
 }

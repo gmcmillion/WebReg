@@ -95,6 +95,7 @@ void CourseList::displayAll()
 		prevPtr = traversePtr;
 		traversePtr = traversePtr->next;
 	}
+    cout << endl;
 }
 
 void CourseList::writeListToFile()
@@ -138,7 +139,7 @@ void CourseList::writeListToFile()
 //find course student wants to enroll in
 void CourseList::searchCoursetoEnroll(string courseCode) {
 
-	ListNode* traversePtr = head;
+    ListNode* traversePtr = head;
     bool exists = false;
 
 	while (traversePtr != nullptr) {
