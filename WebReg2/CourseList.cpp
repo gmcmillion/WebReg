@@ -167,13 +167,23 @@ void CourseList::searchCoursetoEnroll(string courseCode) {
 void CourseList::searchCoursetoDisenroll(string courseCode) {
 
 	ListNode* traversePtr = head;
+	bool exist = false;
 
 	while (traversePtr != nullptr) {
 
 		if (courseCode == traversePtr->course->getCourseNum())
+		{
 			traversePtr->course->disenrollStudent();
+			cout << "Successfully dropped course: " << courseCode << endl;
+			exist = true;
+		}
 
 		traversePtr = traversePtr->next;
+	}
 
+	//Input validation for courses codes that dont exist
+	if (!exist)
+	{
+		cout << "Course " << courseCode << " does not exist" << endl;
 	}
 }

@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\WebReg2\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\WebReg2\Student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\WebReg2\Course.h">

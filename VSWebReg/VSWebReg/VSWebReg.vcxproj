@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\WebReg2\CourseList.cpp" />
     <ClCompile Include="..\..\WebReg2\main.cpp" />
+    <ClCompile Include="..\..\WebReg2\Student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\WebReg2\Course.h" />

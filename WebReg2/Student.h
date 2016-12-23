@@ -2,25 +2,47 @@
 #ifndef Student_h
 #define Student_h
 
+#include <string>
+#include "CourseList.h"
+
 class Student
 {
     private:
         string name;
         int idNum;
+		int maxUnitsAllowed;
+		int currentUnitsEnrolled;
+		CourseList classList;
+
+
+		//write linked list to text file (after student enrolls or drops)
+		void writeLinkedList();
+		void populateList();
+
     public:
         //Constructor
-        Student(string n, int i) : name(n), idNum(i)
-        {}
+		Student(string n, int i);
+		Student();
+		//setters
+		void setName(string name);
+
+		void setID(int id);
     
         //Getters
-        string getName()
-        {
-            return name;
-        }
+		string getName();
     
-        int getIdNum()
-        {
-            return idNum;
-        }
+		int getIdNum();
+
+		//enroll student in course
+		void enroll();
+
+		//drop student from course
+		void dropCourse();
+
+		//display all courses from file to student
+		void displayAll();
+
+
+
 };
 #endif
