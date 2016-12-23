@@ -14,6 +14,8 @@ class Student
 		int currentUnitsEnrolled;
 		CourseList classList;
 
+		//static CourseList classList;
+
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();
