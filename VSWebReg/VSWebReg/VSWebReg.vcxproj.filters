@@ -23,11 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\WebReg2\ICS_Classes.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\WebReg2\Course.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -40,5 +35,10 @@
     <ClInclude Include="..\..\WebReg2\Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ICS_Classes.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

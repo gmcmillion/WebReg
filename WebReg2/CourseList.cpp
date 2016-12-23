@@ -128,7 +128,10 @@ void CourseList::writeListToFile()
 		outFile << traversePtr->course->getcurrentEnrollment()		<< endl;
 		outFile << traversePtr->course->getWaitListed()				<< endl;
 		outFile << traversePtr->course->getStatus()					<< endl;
-		outFile << emptyLine										<< endl;
+
+		if (traversePtr->next != nullptr) {       //<--- this fixes the bug where we were
+			outFile << emptyLine << endl;		  //printing the same course multiple times.
+		}										  //now we can rewrite to the same file safely
 
 		traversePtr = traversePtr->next;
 	}

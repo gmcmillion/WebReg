@@ -12,6 +12,8 @@ using namespace std;
 char menu();
 void enroll(CourseList &);
 
+
+
 int main()
 {
 	//Variables
@@ -25,7 +27,7 @@ int main()
     bool exit = true;
 
 	ifstream inputFile("ICS_Classes.txt");      //Input file
-    
+   
     CourseList icsCourseList;					//Define a CourseList object of ICS courses
 
 	//While not end of file
@@ -68,6 +70,9 @@ int main()
 
 		icsCourseList.add(&d);	                                //Add DeptCourse to the CourseList
 	}
+
+	//Close file
+	inputFile.close();
     
     //Get Student Name
     cout << "Enter student name: \n";
@@ -109,16 +114,9 @@ int main()
             default: cout << "\nThat is an invalid option, try again\n\n";
         }
     }
-    
-	//enroll in some courses to text write to file
-	//icsCourseList.searchCoursetoEnroll("36500");
-	//icsCourseList.searchCoursetoEnroll("36521");
-
-    //Close file
-    inputFile.close();
 
 	//rewrite file before closing
-	//icsCourseList.writeListToFile();
+	icsCourseList.writeListToFile();
     
 	//system pause is the visual studio way of pausing a program before exiting
     system("Pause");
