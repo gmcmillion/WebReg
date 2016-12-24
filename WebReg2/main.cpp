@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <iomanip>
 #include <string>
 #include "Course.h"
 #include "CourseList.h"
@@ -11,27 +10,29 @@ using namespace std;
 //Function Prototypes
 char menu();
 char studentCreationMenu();
-
-Student createStudent(Student& x);
+//Student createStudent(Student& x);      //Commented out since we will use later
 void menuLoop(Student& x);
 
 int main()
 {
-	char studentOption;
+	//Variables
+    char studentOption;
 	bool quitProgram = false;
 
-	//Get choice from welcome menu
-	cout << "\nWelcome to UCI WebReg\n" << endl;
+	//Welcome
+	cout << "--- Welcome to UCI WebReg ---\n" << endl;
 
-	while (!quitProgram) {
+	//While loop to start program
+    while (!quitProgram)
+    {
 		studentOption = studentCreationMenu();
 		switch (studentOption)
 		{
 		case 'A':
-		case 'a': {
+		case 'a':   //Will make the code below into its own function eventually
+        {
 			cin.ignore();
 			//Student x; = createStudent(x); <--------- fix this
-
 
 			//Variables
 			string name;
@@ -44,25 +45,23 @@ int main()
 			//Get Id Number
 			cout << "Enter 8-digit student id number: \n";
 			cin >> idNum;
-			Student x(name, idNum);
-			menuLoop(x);
+			Student x(name, idNum);     //Create a student object
+			menuLoop(x);                //Send object into menuLoop
 		}
 				  break;
 		case 'E':
-		case 'e': {
-			quitProgram = true;
-			return 0;
-		}
-				  break;
+		case 'e': cout << "Goodbye!" << endl;
+            quitProgram = true;
+            break;
 		default: cout << "\nThat is an invalid option, try again\n\n";
 		}
 	}
-
 
 	//system pause is the visual studio way of pausing a program before exiting
 	system("Pause");
 }
 
+/*
 //prompt user creation
 Student createStudent(Student& x) {
 	//Variables
@@ -81,13 +80,15 @@ Student createStudent(Student& x) {
 
 	//Create a student object
 	return x;
-
 }
+*/
 
-char studentCreationMenu() {
+//Creation Menu
+char studentCreationMenu()
+{
 	char opt;
 
-	//menu
+	//Menu
 	cout << "Please select an option below" << endl;
 	cout << "A. Create Student" << endl;
 	cout << "E. Exit Program" << endl;
@@ -96,50 +97,50 @@ char studentCreationMenu() {
 	return opt;
 }
 
-
-
 //Welcome menu
 char menu()
 {
 	char opt;
 
-	//menu
-	cout << "\n\nPlease select an option below" << endl;
+	//Menu
+	cout << "\nPlease select an option below" << endl;
 	cout << "A. Display Available Courses" << endl;
 	cout << "B. Enroll in Course" << endl;
 	cout << "C. Drop a Course" << endl;
 	cout << "D. View current course load" << endl;
-	cout << "E. Exit" << endl;
+	cout << "E. Exit to login screen" << endl;
 	cout << "Enter either A, B, C, D, or E " << endl;
 	cin >> opt;
 
 	return opt;
 }
 
-void menuLoop(Student& x) {
+//Menu Loop
+void menuLoop(Student& x)
+{
 	char option;
 	bool exit = true;
+    CourseList studentSchedule;
 
 	while (exit)
 	{
 		//Get choice from welcome menu
 		option = menu();
+        
 		//Switch statement for each option
 		switch (option)
 		{
 		case 'A':
-		case 'a': x.displayAll();     //Display All
+		case 'a': x.displayAll();                   //Display All
 			break;
 		case 'B':
-		case 'b': x.enroll();
+		case 'b': x.enroll(studentSchedule);        //Enroll in a course
 			break;
 		case 'C':
-		case 'c': //drop course
-			x.dropCourse();
+		case 'c': x.dropCourse();                   //Drop course
 			break;
 		case 'D':
-		case 'd': //view students current course load
-				  //need to create a student member function for this
+		case 'd': studentSchedule.displayLoad();    //View students current course load
 			break;
 		case 'E':
 		case 'e': cout << "Logging out, Goodbye!" << endl;

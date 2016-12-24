@@ -1,4 +1,5 @@
 #include "CourseList.h"
+#include "DeptCourse.h"
 #include <fstream>
 
 //Constructor
@@ -98,6 +99,20 @@ void CourseList::displayAll()
     cout << endl;
 }
 
+//Display each course the student has signed up for
+void CourseList::displayLoad()
+{
+    cout << "\nHere are your enrolled classes:" << endl;
+    
+    //Traverse the list
+    for (ListNode * temp = head; temp != NULL; temp = temp->next)
+    {
+        temp->course->displaySchedule();   //draw
+        cout << endl;
+    }
+}
+
+//Update list
 void CourseList::writeListToFile()
 {
 	string emptyLine = "";
@@ -129,29 +144,43 @@ void CourseList::writeListToFile()
 		outFile << traversePtr->course->getWaitListed()				<< endl;
 		outFile << traversePtr->course->getStatus()					<< endl;
 
-		if (traversePtr->next != nullptr) {       //<--- this fixes the bug where we were
-			outFile << emptyLine << endl;		  //printing the same course multiple times.
-		}										  //now we can rewrite to the same file safely
+		if (traversePtr->next != nullptr)           //this fixes the bug where we were
+		{                                           //printing the same course multiple times.
+            outFile << emptyLine << endl;           //now we can rewrite to the same file safely
+		}
 
 		traversePtr = traversePtr->next;
 	}
-
 	outFile.close();
 }
 
-//find course student wants to enroll in
-void CourseList::searchCoursetoEnroll(string courseCode) {
-
+//Find course student wants to enroll in
+void CourseList::searchCoursetoEnroll(string courseCode, CourseList & y)
+{
     ListNode* traversePtr = head;
     bool exists = false;
 
-	while (traversePtr != nullptr) {
-
+	while (traversePtr != nullptr)
+    {
 		if (courseCode == traversePtr->course->getCourseNum())
         {
 			traversePtr->course->enrollStudentInCourse();
             cout << "Enrolled in " << courseCode << endl;
             exists = true;
+            
+            //Create DeptCourse object for new linked list
+            DeptCourse d2(
+			traversePtr->course->getClassName(),
+            traversePtr->course->getCourseNum(),
+            traversePtr->course->getType(),
+            traversePtr->course->getSection(),
+            traversePtr->course->getUnits(),
+            traversePtr->course->getProf(),
+            traversePtr->course->getTime(),
+            traversePtr->course->getLocation());
+            
+            //Add it to the courselist
+            y.add(&d2);
         }
 		traversePtr = traversePtr->next;
 	}

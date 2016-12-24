@@ -41,7 +41,21 @@ class DeptCourse : public Course
 			waitListed = cWaitlisted;
 			status = cStatus;
         }
-
+    
+        //Second Constructor (for student class list. Takes less arguments)
+        DeptCourse(
+			string courseName, string courseNum, string cType,
+            string cSection,  string courseUnits, string profName,
+			string cTime,    string cLocation)
+			: Course(profName, courseNum, courseName)
+        {
+			type = cType;			    
+			section = cSection;       		
+			units = courseUnits;
+			time = cTime;
+			location= cLocation;		
+        }
+    
         //Overrides the display function defined in Course.h
         void display() override
         {
@@ -56,6 +70,7 @@ class DeptCourse : public Course
 			<< getWaitListed()		<< " " << getStatus()
 			<< endl;
         }
+        
 		void display(string courseTitle)
 		{
 
@@ -68,6 +83,16 @@ class DeptCourse : public Course
 				<< getWaitListed() << " " << getStatus()
 				<< endl;
 		}
+        
+        //Displays students enrolled classes
+        void displaySchedule()
+        {
+            cout
+                << getClassName() << " " << getCourseNum() << " "
+                << getType() << " " << getSection() << " "
+                << getUnits() << " " << getProf() << " "
+                << getTime() << " " << getLocation();
+        }
 
 		//increment current enrollment by 1
 		void enrollStudentInCourse() 
