@@ -1,13 +1,16 @@
 #include "Student.h"
 #include <fstream>
 
+
+//int Student::classList = null_ptr;
+
+
 //Constructor
 Student::Student(string n, int i) : name(n), idNum(i)
 {
 	populateList();
 }
 
-//Default Constructor
 Student::Student() 
 {
 	populateList();
@@ -34,8 +37,7 @@ int Student::getIdNum()
 }
 
 //populate instance variables linked list... consider making linked list a static variable
-void Student::populateList()
-{
+void Student::populateList() {
 	string
 		courseName, courseNum, type, section,
 		units, professor, time, location,
@@ -81,7 +83,7 @@ void Student::populateList()
 			units, time, location, finalDateTime, maxCapacity,
 			currentEnrollment, waitListed, status);				//Create DeptCourse object
 
-		classList.add(&d);                                      //Add DeptCourse to the CourseList
+		classList.add(&d);	                                //Add DeptCourse to the CourseList
 	}
 
 	//Close file after populating linked list
@@ -97,10 +99,16 @@ void Student::displayAll() {
 	this->classList.displayAll();
 }
 
+void Student::displayLoad() {
+
+	this->studentSchedule.displayLoad();
+}
+
 //Enroll
-void Student::enroll(CourseList& x)
+void Student::enroll()
 {
 	bool enroll = true;
+	bool validCourse = false;
 
 	//Loop to enroll in classes
 	while (enroll)
@@ -112,10 +120,14 @@ void Student::enroll(CourseList& x)
 		cin >> num;
 
 		//Sign student up for class
-		classList.searchCoursetoEnroll(num, x);
-        
-		//Add Another Course??
-        cout << "Would you like to enroll in another course? (Y/N)" << endl;
+		validCourse = classList.searchCoursetoEnroll(num);
+		if (validCourse) {
+			//get class matching that course code, and add it into the student schedule
+			DeptCourse x = classList.courseToAdd(num);
+			studentSchedule.add(&x);
+		}
+
+		cout << "Would you like to enroll in another course? (Y/N)" << endl;
 		cin >> choice;
 
 		//Input verification
@@ -131,6 +143,7 @@ void Student::enroll(CourseList& x)
 	}
 	//write linked list to text file when done enrolling
 	classList.writeListToFile();
+
 }
 
 //Drop Course

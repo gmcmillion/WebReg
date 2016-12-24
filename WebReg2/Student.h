@@ -1,6 +1,7 @@
 //Student.h
 #ifndef Student_h
 #define Student_h
+
 #include <string>
 #include "CourseList.h"
 
@@ -12,6 +13,9 @@ class Student
 		int maxUnitsAllowed;
 		int currentUnitsEnrolled;
 		CourseList classList;
+		CourseList studentSchedule; // <--- this should hold student class
+
+		//static CourseList classList;
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();
@@ -32,14 +36,17 @@ class Student
 		int getIdNum();
 
 		//enroll student in course
-		void enroll(CourseList&);
+		void enroll();
 
 		//drop student from course
 		void dropCourse();
 
 		//display all courses from file to student
 		void displayAll();
-    
-        void displayLoad();
+
+		//Display each course the student has signed up for
+		void displayLoad();
+
+
 };
 #endif

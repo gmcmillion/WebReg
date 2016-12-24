@@ -24,16 +24,18 @@ class CourseList
         //Add Course to linked list
 		void add(DeptCourse * co);
 
+		DeptCourse courseToAdd(string courseCode);
+
 		//for now, search couse by the course code
-		void searchCoursetoEnroll(string courseCode, CourseList&);
+		bool searchCoursetoEnroll(string courseCode);
 
 		void searchCoursetoDisenroll(string courseCode);
 
         //Display each course in the linked list
 		void displayAll();
-    
-        //Display each course the student has signed up for
-        void displayLoad();
+
+		//Display each course the student has signed up for
+		void CourseList::displayLoad();
 
 		//this rewrites the file essentially "modifying it".
 		void writeListToFile();
