@@ -70,12 +70,12 @@ void CourseList::displayAll()
 
 		if (traversePtr->next != nullptr && prevPtr != nullptr) //if not currently the first node, and there's a next node
 		{
-			if (prevPtr->course->getClassName() != traversePtr->course->getClassName())
+			if (prevPtr->course->getClassName() != traversePtr->course->getClassName()) //if next course title is different
 			{
 				cout << endl;					//skip line for formatting
 				traversePtr->course->display();
 			}
-			else 
+			else							   
 			{
 				traversePtr->course->display(courseTitle);
 			}
@@ -214,4 +214,64 @@ void CourseList::searchCoursetoDisenroll(string courseCode) {
 	{
 		cout << "Course " << courseCode << " does not exist" << endl;
 	}
+}
+
+//find course student wants to enroll in
+bool CourseList::removeCourseFromLoad(string courseCode){
+
+	ListNode* delPtr;
+	ListNode* NextNode;
+	ListNode* CurrentNode;
+
+	//if bucket is empty
+	if (head == nullptr) {
+		std::cout << "You have no classes to drop." << std::endl;
+	}
+	//if one one item exist in bucket
+	else if (head->course->getCourseNum() == courseCode && head->next == nullptr){
+
+		delete head;
+		head = nullptr;
+
+		std::cout << "Course Dropped" << std::endl;
+		
+		return true;
+	}
+	//if item is first in bucket, but bucket has more than one item
+	else if (head->course->getCourseNum() == courseCode) {
+
+		NextNode = head->next;
+		CurrentNode = head;
+
+		//decapitate head
+		delete CurrentNode;
+		
+		//rechain head to new location
+		head = NextNode;
+		std::cout << "Course Dropped" << std::endl;
+		return true;
+	}
+	else {
+		//more than one node exist in bucket
+		NextNode = head->next;
+		CurrentNode = head;
+
+		while (NextNode != nullptr && NextNode->course->getCourseNum() != courseCode) {
+			CurrentNode = NextNode;
+			NextNode = CurrentNode->next;
+		}
+		if (CurrentNode == nullptr || CurrentNode->course->getCourseNum() != courseCode) {
+			std::cout << "Course Not Found" << std::endl;
+		}
+		else {
+			//Set delete ptr to struct to be deleted and rechain
+			delPtr = NextNode;
+			NextNode = NextNode->next;
+			NextNode->next = NextNode;
+			delete delPtr;
+			std::cout << "Course Dropped" << std::endl;
+			return true;
+		}
+	}
+	return false;
 }

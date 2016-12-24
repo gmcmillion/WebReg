@@ -156,12 +156,17 @@ void Student::dropCourse()
 	{
 		string num;
 		char choice;
+		bool validCourse = false;
 
 		cout << "\nEnter the course number you wish to drop:" << endl;
 		cin >> num;
 
-		//Sign student up for class
-		classList.searchCoursetoDisenroll(num);
+		validCourse = studentSchedule.removeCourseFromLoad(num);
+		
+		if (validCourse) {
+			//drop class from list
+			classList.searchCoursetoDisenroll(num);
+		}
 
 		cout << "Would you like to drop  another course? (Y/N)" << endl;
 		cin >> choice;
@@ -177,6 +182,7 @@ void Student::dropCourse()
 		if (choice == 'N' || choice == 'n')
 			drop = false;
 	}
+
 	//write linked list to text file when done dropping
 	classList.writeListToFile();
 }

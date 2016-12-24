@@ -26,6 +26,8 @@ class CourseList
 
 		DeptCourse courseToAdd(string courseCode);
 
+		bool removeCourseFromLoad(string courseCode);
+
 		//for now, search couse by the course code
 		bool searchCoursetoEnroll(string courseCode);
 
