@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\WebReg2\Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\WebReg2\InterfaceFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\WebReg2\Course.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\WebReg2\Student.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\WebReg2\InterfaceFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -40,7 +40,6 @@ void CourseList::add(DeptCourse* addedCourse)
 	if (!head)
 	{									//If there are no nodes in the list
 		head = newNode;					//make newNode the first node
-		//title = head->course->getClassName();
 	}
 	else                    
 	{

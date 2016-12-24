@@ -1,10 +1,6 @@
 #include "Student.h"
 #include <fstream>
 
-
-//int Student::classList = null_ptr;
-
-
 //Constructor
 Student::Student(string n, int i) : name(n), idNum(i)
 {

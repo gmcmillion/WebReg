@@ -15,11 +15,12 @@ class Student
 		CourseList classList;
 		CourseList studentSchedule; // <--- this should hold student class
 
-		//static CourseList classList;
+		//static CourseList masterSchedule;
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();
 		void populateList();
+
 
     public:
         //Constructor

@@ -23,7 +23,7 @@ class CourseList
     
         //Add Course to linked list
 		void add(DeptCourse * co);
-
+		
 		DeptCourse courseToAdd(string courseCode);
 
 		bool removeCourseFromLoad(string courseCode);
