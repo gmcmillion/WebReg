@@ -107,7 +107,7 @@ void CourseList::displayLoad()
     //Traverse the list
     for (ListNode * temp = head; temp != NULL; temp = temp->next)
     {
-        temp->course->displaySchedule();   //draw
+        temp->course->displaySchedule();
         cout << endl;
     }
 }
