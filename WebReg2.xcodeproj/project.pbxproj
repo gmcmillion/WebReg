@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		574E115F1E0F09B400167C0C /* DeptCourse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 574E115C1E0F09B400167C0C /* DeptCourse.cpp */; };
+		574E11601E0F09B400167C0C /* InterfaceFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 574E115D1E0F09B400167C0C /* InterfaceFunctions.cpp */; };
 		577F713B1E0E11B5009E1E62 /* Student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577F713A1E0E11B5009E1E62 /* Student.cpp */; };
 		57F67D3B1E08FBB90005E5C3 /* CourseList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F67D361E08FBB90005E5C3 /* CourseList.cpp */; };
 		57F67D3C1E08FBB90005E5C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F67D3A1E08FBB90005E5C3 /* main.cpp */; };
@@ -25,6 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		574E115C1E0F09B400167C0C /* DeptCourse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeptCourse.cpp; sourceTree = "<group>"; };
+		574E115D1E0F09B400167C0C /* InterfaceFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterfaceFunctions.cpp; sourceTree = "<group>"; };
+		574E115E1E0F09B400167C0C /* InterfaceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceFunctions.h; sourceTree = "<group>"; };
 		577F713A1E0E11B5009E1E62 /* Student.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Student.cpp; sourceTree = "<group>"; };
 		57F67D2C1E08FB2F0005E5C3 /* WebReg2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebReg2; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F67D361E08FBB90005E5C3 /* CourseList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CourseList.cpp; sourceTree = "<group>"; };
@@ -67,10 +72,13 @@
 			isa = PBXGroup;
 			children = (
 				57F67D3A1E08FBB90005E5C3 /* main.cpp */,
+				574E115E1E0F09B400167C0C /* InterfaceFunctions.h */,
+				574E115D1E0F09B400167C0C /* InterfaceFunctions.cpp */,
 				57F67D3D1E08FBE70005E5C3 /* Student.h */,
 				577F713A1E0E11B5009E1E62 /* Student.cpp */,
 				57F67D3E1E08FC1F0005E5C3 /* Course.h */,
 				57F67D381E08FBB90005E5C3 /* DeptCourse.h */,
+				574E115C1E0F09B400167C0C /* DeptCourse.cpp */,
 				57F67D371E08FBB90005E5C3 /* CourseList.h */,
 				57F67D361E08FBB90005E5C3 /* CourseList.cpp */,
 				57F67D391E08FBB90005E5C3 /* ICS_Classes.txt */,
@@ -136,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				577F713B1E0E11B5009E1E62 /* Student.cpp in Sources */,
+				574E115F1E0F09B400167C0C /* DeptCourse.cpp in Sources */,
 				57F67D3C1E08FBB90005E5C3 /* main.cpp in Sources */,
+				574E11601E0F09B400167C0C /* InterfaceFunctions.cpp in Sources */,
 				57F67D3B1E08FBB90005E5C3 /* CourseList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

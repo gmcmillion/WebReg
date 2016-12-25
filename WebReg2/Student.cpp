@@ -12,15 +12,6 @@ Student::Student()
 	populateList();
 }
 
-//setters
-void Student::setName(string input) {
-	name = input;
-}
-
-void Student::setID(int input) {
-	idNum = input;
-}
-
 //Getters
 string Student::getName()
 {
@@ -33,7 +24,8 @@ int Student::getIdNum()
 }
 
 //populate instance variables linked list... consider making linked list a static variable
-void Student::populateList() {
+void Student::populateList()
+{
 	string
 		courseName, courseNum, type, section,
 		units, professor, time, location,
@@ -112,12 +104,13 @@ void Student::enroll()
 		string num;
 		char choice;
 
-		cout << "\nPlease sign up for a course using a the 5 digit course number" << endl;
+		cout << "\nPlease enter 5 digit course number to enroll in course" << endl;
 		cin >> num;
 
 		//Sign student up for class
 		validCourse = classList.searchCoursetoEnroll(num);
-		if (validCourse) {
+		if (validCourse)
+        {
 			//get class matching that course code, and add it into the student schedule
 			DeptCourse x = classList.courseToAdd(num);
 			studentSchedule.add(&x);
@@ -139,7 +132,6 @@ void Student::enroll()
 	}
 	//write linked list to text file when done enrolling
 	classList.writeListToFile();
-
 }
 
 //Drop Course
@@ -159,12 +151,13 @@ void Student::dropCourse()
 
 		validCourse = studentSchedule.removeCourseFromLoad(num);
 		
-		if (validCourse) {
+		if (validCourse)
+        {
 			//drop class from list
 			classList.searchCoursetoDisenroll(num);
 		}
 
-		cout << "Would you like to drop  another course? (Y/N)" << endl;
+		cout << "Would you like to drop another course? (Y/N)" << endl;
 		cin >> choice;
 
 		//Input verification

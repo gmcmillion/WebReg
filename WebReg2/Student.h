@@ -1,13 +1,12 @@
 //Student.h
 #ifndef Student_h
 #define Student_h
-
-#include <string>
 #include "CourseList.h"
 
 class Student
 {
     private:
+        //Variables
         string name;
         int idNum;
 		int maxUnitsAllowed;
@@ -21,33 +20,25 @@ class Student
 		void writeLinkedList();
 		void populateList();
 
-
     public:
         //Constructor
 		Student(string n, int i);
 		Student();
-		//setters
-		void setName(string name);
-
-		void setID(int id);
-    
+		
         //Getters
 		string getName();
-    
 		int getIdNum();
 
-		//enroll student in course
+		//Enroll student in course
 		void enroll();
 
-		//drop student from course
+		//Drop student from course
 		void dropCourse();
 
-		//display all courses from file to student
+		//Display all courses from file to student
 		void displayAll();
 
 		//Display each course the student has signed up for
 		void displayLoad();
-
-
 };
 #endif
