@@ -1,6 +1,7 @@
 //Course.h
 #ifndef COURSE_H
 #define COURSE_H
+
 #include <string>
 using namespace std;
 
@@ -22,6 +23,8 @@ class Course
         //Virtual Functions for display
         virtual void display() = 0;   
     
+        //setters
+        
         //getters
         string getProf()
         {
