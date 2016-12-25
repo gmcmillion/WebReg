@@ -58,7 +58,7 @@ void CourseList::displayAll()
 	string courseTitle = "";
 	ListNode* prevPtr = nullptr;
 	ListNode* traversePtr = head;
-    cout << "\n------------ Available Courses ------------\n";
+	cout << "Here are all the courses:\n" << endl;
 
 	//print the first course in the node
 	if (traversePtr != nullptr) {
@@ -101,7 +101,7 @@ void CourseList::displayAll()
 //Display each course the student has signed up for
 void CourseList::displayLoad()
 {
-	cout << "\n-------- Enrolled Courses --------\n";
+	cout << "\nHere are your enrolled classes:" << endl;
 
 	//Traverse the list
 	for (ListNode * temp = head; temp != NULL; temp = temp->next)
@@ -142,7 +142,7 @@ void CourseList::writeListToFile()
 		outFile << traversePtr->course->getWaitListed()				<< endl;
 		outFile << traversePtr->course->getStatus()					<< endl;
 
-		if (traversePtr->next != nullptr) {       //this fixes the bug where we were
+		if (traversePtr->next != nullptr) {       //<--- this fixes the bug where we were
 			outFile << emptyLine << endl;		  //printing the same course multiple times.
 		}										  //now we can rewrite to the same file safely
 

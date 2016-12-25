@@ -1,6 +1,7 @@
 //CourseList.h
 #ifndef COURSELIST_H
 #define COURSELIST_H
+
 #include "DeptCourse.h"
 
 class CourseList
@@ -36,7 +37,7 @@ class CourseList
 		void displayAll();
 
 		//Display each course the student has signed up for
-		void displayLoad();
+		void CourseList::displayLoad();
 
 		//this rewrites the file essentially "modifying it".
 		void writeListToFile();
