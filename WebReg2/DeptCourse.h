@@ -20,131 +20,37 @@ class DeptCourse : public Course
     
     public:
         //Constructor
-        DeptCourse(
-			string profName, string courseNum, string courseName,
+        DeptCourse(string profName, string courseNum, string courseName,
 			string cType,    string cSection,  string courseUnits,
 			string cTime,    string cLocation, string cFinalDateTime,
 			string cMaxEnr,  string cCurEnro,  string cWaitlisted,
-			string cStatus) 
-			: Course(profName, courseNum, courseName)
-        {
-			type = cType;			    
-			section = cSection;       		
-			units = courseUnits;
-			time = cTime;
-			location= cLocation;		
-			
-			finalDateTime = cFinalDateTime;		
-			
-			maxEnrollment = cMaxEnr;
-			currentEnrollment = cCurEnro;	
-			waitListed = cWaitlisted;
-			status = cStatus;
-        }
-
+			string cStatus);
+    
         //Overrides the display function defined in Course.h
-        void display() override
-        {
-			cout << getClassName() << endl;
-
-			cout 
-			<< getCourseNum()		<< " " << getType()				 << " "
-			<< getSection()			<< " " << getUnits()			 << " "
-			<< getProf()			<< " " << getTime()				 << " "
-			<< getLocation()		<< " " << getFinalDateTime()	 << " " 
-			<< getmaxEnrollment()	<< " " << getcurrentEnrollment() << " "
-			<< getWaitListed()		<< " " << getStatus()
-			<< endl;
-        }
-		void display(string courseTitle)
-		{
-
-			cout
-				<< getCourseNum() << " " << getType() << " "
-				<< getSection() << " " << getUnits() << " "
-				<< getProf() << " " << getTime() << " "
-				<< getLocation() << " " << getFinalDateTime() << " "
-				<< getmaxEnrollment() << " " << getcurrentEnrollment() << " "
-				<< getWaitListed() << " " << getStatus()
-				<< endl;
-		}
+        void display() override;
+        
+		//Display
+        void display(string courseTitle);
 
 		//Displays students enrolled classes
-		void displaySchedule()
-		{
-			cout
-				<< getClassName() << " " << getCourseNum() << " "
-				<< getType() << " " << getSection() << " "
-				<< getUnits() << " " << getProf() << " "
-				<< getTime() << " " << getLocation();
-		}
+		void displaySchedule();
 
 		//increment current enrollment by 1
-		void enrollStudentInCourse() 
-		{
-			int numEnrolled = stoi(currentEnrollment); 		//use stoi to convert string to int
-			numEnrolled++;
-
-			currentEnrollment = to_string(numEnrolled);		//set currentEnrollment
-		}
-
+		void enrollStudentInCourse();
+        
 		//decrement current enrollment by 1
-		void disenrollStudent()
-		{
-			int numEnrolled = stoi(currentEnrollment); 		//use stoi to convert string to int
-			numEnrolled--;
-
-			currentEnrollment = to_string(numEnrolled);		//set currentEnrollment		
-		}
+		void disenrollStudent();
     
-        string getType()
-        {
-            return type;
-        }
-		
-		string getSection()
-		{
-			return section;
-		}        
-
-		string getUnits()
-		{
-			return units;
-		}        
-		
-		string getTime()
-		{
-			return time;
-		}        
-		
-		string getLocation()
-		{
-			return location;
-		}        
-		
-		string getFinalDateTime()
-		{
-			return finalDateTime;
-		}
-
-		string getmaxEnrollment()
-		{
-			return maxEnrollment;
-		}
-
-		string getcurrentEnrollment()
-		{
-			return currentEnrollment;
-		}
-
-		string getWaitListed()
-		{
-			return waitListed;
-		}
-
-		string getStatus()
-		{
-			return status;
-		}
+        //Getters
+        string getType();
+		string getSection();
+		string getUnits();
+		string getTime();
+		string getLocation();
+		string getFinalDateTime();
+		string getmaxEnrollment();
+		string getcurrentEnrollment();
+		string getWaitListed();
+		string getStatus();
 };
 #endif

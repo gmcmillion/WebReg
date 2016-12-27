@@ -48,9 +48,6 @@ char startUpMenu()
 	return opt;
 }
 
-
-
-
 //Main menu
 char menu()
 {

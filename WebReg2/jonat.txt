@@ -5,14 +5,15 @@ john jay
 16
 0
 6D Discrete Math for CS
-36534
-Dis
+36530
+Lec
+A
 4
-0
 IRANI, S.
-MW 8:00 - 8:50p
-ICS 174
-100
-5
+MWF 2:00 - 2:50p
+SSLH 100
+Fri, Mar 24, 1:30-3:30pm
+399
+4
 0
 OPEN

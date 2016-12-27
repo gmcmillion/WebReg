@@ -49,7 +49,7 @@ int main()
 			finalDateTime, maxCapacity, currentEnrollment,
 			waitListed, status, emptySpace, name;
 
-		Student* x = new Student;			// <--- make sure to check for mem leaks & deallocate
+		Student* x = new Student;	// <--- make sure to check for mem leaks & deallocate
 
 		while (inputFile) {
 			bool gotMemberData = false;
@@ -66,7 +66,7 @@ int main()
 			}
 			cout << userLogin << userPW << userName << userID << userMaxUnits << userCU << endl;
 
-			x->setUserLogin(userLogin);
+            x->setUserLogin(userLogin);
 			x->setPassCode(userPW);
 			x->setName(userName);
 			x->setID(atoi(userID.c_str()));
@@ -122,7 +122,6 @@ int main()
 
 		testMap[userPW] = x;				//map object 
 		inputFile.close();
-
 	}
 
 	//Get choice from welcome menu
@@ -161,7 +160,6 @@ int main()
 					if (testMap[passWord]->getLogin() == loginName) {		
 						cout << "Welcome back: " << testMap[passWord]->getName() << endl;
 						menuLoop(testMap[passWord]);
-
 						break;
 					}
 				}
@@ -171,8 +169,6 @@ int main()
 					//add return statement to exit for loop
 				}
 			}
-
-
 		}
 				  break;
 		case 'E':
@@ -185,55 +181,11 @@ int main()
 		}
 	}
 
-
-	/*
-
-	//Get choice from welcome menu
-	cout << "\nWelcome to UCI WebReg\n" << endl;
-
-	while (!quitProgram) {
-		
-		studentOption = studentCreationMenu();
-		cin.ignore();
-
-		switch (studentOption)
-		{
-		case 'A':
-		case 'a': {
-			//Student x = createStudent(x); <--------- fix this
-
-			//Variables
-			string name;
-			int idNum;
-
-			//Get Student Name
-			cout << "Enter student name: \n";
-			getline(cin, name);
-
-			//Get Id Number
-			cout << "Enter 8-digit student id number: \n";
-			cin >> idNum;
-			Student x(name, idNum);
-			menuLoop(x);
-		}
-				  break;
-		case 'E':
-		case 'e': {
-			quitProgram = true;
-			return 0;
-		}
-				  break;
-		default: cout << "\nThat is an invalid option, try again\n\n";
-		}
-	}
-
-	*/
 
 	for (auto itr = testMap.begin(); itr != testMap.end(); itr++)
 	{
 		delete itr->second;
 	}
-
 
 	return 0;
 }

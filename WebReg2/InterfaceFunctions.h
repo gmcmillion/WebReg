@@ -5,10 +5,10 @@
 
 //Function Prototypes
 char menu();
-char studentCreationMenu(); //<-- change this function
-char startUpMenu();			//<--- add this function
+char studentCreationMenu();
+char startUpMenu();
 
-Student createStudent(Student& x); //<-- change this function
+Student createStudent(Student& x);
 void menuLoop(Student* x);
 
 //Student createStudent();

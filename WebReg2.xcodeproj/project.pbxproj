@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5741B2E01E11FEA600AC39D9 /* DeptCourse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5741B2DA1E11FEA600AC39D9 /* DeptCourse.cpp */; };
+		5741B2E11E11FEA600AC39D9 /* InterfaceFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5741B2DB1E11FEA600AC39D9 /* InterfaceFunctions.cpp */; };
 		577F713B1E0E11B5009E1E62 /* Student.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 577F713A1E0E11B5009E1E62 /* Student.cpp */; };
 		57F67D3B1E08FBB90005E5C3 /* CourseList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F67D361E08FBB90005E5C3 /* CourseList.cpp */; };
 		57F67D3C1E08FBB90005E5C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F67D3A1E08FBB90005E5C3 /* main.cpp */; };
@@ -25,6 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5741B2DA1E11FEA600AC39D9 /* DeptCourse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DeptCourse.cpp; sourceTree = "<group>"; };
+		5741B2DB1E11FEA600AC39D9 /* InterfaceFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterfaceFunctions.cpp; sourceTree = "<group>"; };
+		5741B2DC1E11FEA600AC39D9 /* InterfaceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceFunctions.h; sourceTree = "<group>"; };
+		5741B2DD1E11FEA600AC39D9 /* jonat.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jonat.txt; sourceTree = "<group>"; };
+		5741B2DE1E11FEA600AC39D9 /* users.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = users.txt; sourceTree = "<group>"; };
+		5741B2DF1E11FEA600AC39D9 /* zeppelin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zeppelin.txt; sourceTree = "<group>"; };
 		577F713A1E0E11B5009E1E62 /* Student.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Student.cpp; sourceTree = "<group>"; };
 		57F67D2C1E08FB2F0005E5C3 /* WebReg2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebReg2; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F67D361E08FBB90005E5C3 /* CourseList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CourseList.cpp; sourceTree = "<group>"; };
@@ -67,12 +75,18 @@
 			isa = PBXGroup;
 			children = (
 				57F67D3A1E08FBB90005E5C3 /* main.cpp */,
+				5741B2DB1E11FEA600AC39D9 /* InterfaceFunctions.cpp */,
+				5741B2DC1E11FEA600AC39D9 /* InterfaceFunctions.h */,
+				57F67D3E1E08FC1F0005E5C3 /* Course.h */,
 				57F67D3D1E08FBE70005E5C3 /* Student.h */,
 				577F713A1E0E11B5009E1E62 /* Student.cpp */,
-				57F67D3E1E08FC1F0005E5C3 /* Course.h */,
 				57F67D381E08FBB90005E5C3 /* DeptCourse.h */,
+				5741B2DA1E11FEA600AC39D9 /* DeptCourse.cpp */,
 				57F67D371E08FBB90005E5C3 /* CourseList.h */,
 				57F67D361E08FBB90005E5C3 /* CourseList.cpp */,
+				5741B2DE1E11FEA600AC39D9 /* users.txt */,
+				5741B2DD1E11FEA600AC39D9 /* jonat.txt */,
+				5741B2DF1E11FEA600AC39D9 /* zeppelin.txt */,
 				57F67D391E08FBB90005E5C3 /* ICS_Classes.txt */,
 			);
 			path = WebReg2;
@@ -136,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				577F713B1E0E11B5009E1E62 /* Student.cpp in Sources */,
+				5741B2E01E11FEA600AC39D9 /* DeptCourse.cpp in Sources */,
 				57F67D3C1E08FBB90005E5C3 /* main.cpp in Sources */,
+				5741B2E11E11FEA600AC39D9 /* InterfaceFunctions.cpp in Sources */,
 				57F67D3B1E08FBB90005E5C3 /* CourseList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
