@@ -23,9 +23,7 @@ class Course
         //Virtual Functions for display
         virtual void display() = 0;   
     
-        //setters
-        
-        //getters
+        //Getters
         string getProf()
         {
             return prof;

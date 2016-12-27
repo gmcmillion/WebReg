@@ -1,4 +1,5 @@
 #include "DeptCourse.h"
+#include <iomanip>
 
 //Constructor
 DeptCourse::DeptCourse(string profName, string courseNum, string courseName,
@@ -24,36 +25,59 @@ void DeptCourse::display() //override
 {
     cout << getClassName() << endl;
 
+    //Heading
+    cout << "Crs Code | " << "Type | " << "Sect | "
+    << "Units | " << "Professor  | " << "      Time         | "
+    << " Location  | " << "          Final            | "
+    << "Max Enr. | " << "Curr. Enr. | "
+    << "WaitList | " << "Status" << endl;
+
     cout
-    << getCourseNum()		<< " " << getType()				 << " "
-    << getSection()			<< " " << getUnits()			 << " "
-    << getProf()			<< " " << getTime()				 << " "
-    << getLocation()		<< " " << getFinalDateTime()	 << " "
-    << getmaxEnrollment()	<< " " << getcurrentEnrollment() << " "
-    << getWaitListed()		<< " " << getStatus() << endl;
+    << setw(10) << left << getCourseNum() << " "
+    << setw(6) << left << getType() << " "
+    << setw(6) << left << getSection()<< " "
+    << setw(7) << left << getUnits() << " "
+    << setw(13) << left << getProf() << " "
+    << setw(20) << left << getTime() << " "
+    << setw(12) << left << getLocation() << " "
+    << setw(27) << left << getFinalDateTime() << " "
+    << setw(10) << left << getmaxEnrollment() << " "
+    << setw(12) << left << getcurrentEnrollment() << " "
+    << setw(10) << left << getWaitListed() << " "
+    << setw(7) << left << getStatus() << endl;
 }
 
 //Display
 void DeptCourse::display(string courseTitle)
 {
     cout
-    << getCourseNum() << " " << getType() << " "
-    << getSection() << " " << getUnits() << " "
-    << getProf() << " " << getTime() << " "
-    << getLocation() << " " << getFinalDateTime() << " "
-    << getmaxEnrollment() << " " << getcurrentEnrollment() << " "
-    << getWaitListed() << " " << getStatus()
-    << endl;
+    << setw(10) << left << getCourseNum() << " "
+    << setw(6) << left << getType() << " "
+    << setw(6) << left << getSection()<< " "
+    << setw(7) << left << getUnits() << " "
+    << setw(13) << left << getProf() << " "
+    << setw(20) << left << getTime() << " "
+    << setw(12) << left << getLocation() << " "
+    << setw(27) << left << getFinalDateTime() << " "
+    << setw(10) << left << getmaxEnrollment() << " "
+    << setw(12) << left << getcurrentEnrollment() << " "
+    << setw(10) << left << getWaitListed() << " "
+    << setw(7) << left << getStatus() << endl;
 }
 
 //Displays students enrolled classes
 void DeptCourse::displaySchedule()
 {
+
     cout
-    << getClassName() << " " << getCourseNum() << " "
-    << getType() << " " << getSection() << " "
-    << getUnits() << " " << getProf() << " "
-    << getTime() << " " << getLocation();
+    << setw(25) << left << getClassName() << " "
+    << setw(10) << left << getCourseNum() << " "
+    << setw(6) << left << getType() << " "
+    << setw(6) << left << getSection()<< " "
+    << setw(8) << left << getUnits() << " "
+    << setw(13) << left << getProf() << " "
+    << setw(21) << left << getTime() << " "
+    << setw(11) << left << getLocation();
 }
 
 //Increment current enrollment by 1

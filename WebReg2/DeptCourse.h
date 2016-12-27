@@ -6,16 +6,16 @@
 class DeptCourse : public Course
 {
     protected:
-		string type;			    //course type like lab, lecture, dis
-		string section;       		//A, A1, A2, etc. We might not need this
-		string units;				//course units
-		string time;				//course meeting times and days
-		string location;			//course room location
-        string finalDateTime;		//course final date and time
-        string maxEnrollment;		//enrollment capacity
-		string currentEnrollment;	//number of students currently enrolled
+        //Variables
+		string type;			    //Course type (lab, lecture, discussion)
+		string section;       		//A, A1, A2
+		string units;				//Course units
+		string time;				//Course meeting times and days
+		string location;			//Course room location
+        string finalDateTime;		//Course final date and time
+        string maxEnrollment;		//Enrollment capacity
+		string currentEnrollment;	//Number of students currently enrolled
         string waitListed;			//waitlisted capacity, labs are often N/A due to students not being able to waitlist
-        //string restrictions;		//sometimes class are restricted to	ics students and not open to students of other majors
         string status;				//open, full, etc.
     
     public:

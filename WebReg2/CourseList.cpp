@@ -1,5 +1,6 @@
 #include "CourseList.h"
 #include <fstream>
+#include <iomanip>
 
 //Constructor
 CourseList::CourseList()
@@ -58,7 +59,9 @@ void CourseList::displayAll()
 	string courseTitle = "";
 	ListNode* prevPtr = nullptr;
 	ListNode* traversePtr = head;
-	cout << "\n------------ Available Courses ------------\n";
+	cout << "\n---------------------------------------------------------------- "
+    << "AVAILABLE COURSES "
+    << "----------------------------------------------------------------\n";
 
 	//print the first course in the node
 	if (traversePtr != nullptr) {
@@ -101,7 +104,13 @@ void CourseList::displayAll()
 //Display each course the student has signed up for
 void CourseList::displayLoad()
 {
-	cout << "\n-------- Enrolled Courses --------\n";
+	cout << "\n------------------------------------------- ENROLLED COURSES "
+    << "-------------------------------------------\n";
+    
+    //Heading
+    cout << "      Course Name       | " << "Crs Code | " << "Type | " << "Sect | "
+    << "Units | " << " Professor  | " << "       Time         | "
+    << " Location" << endl;
 
 	//Traverse the list
 	for (ListNode * temp = head; temp != NULL; temp = temp->next)

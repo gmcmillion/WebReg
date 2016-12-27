@@ -115,8 +115,8 @@ void Student::displayAll() {
 	this->classList.displayAll();
 }
 
-void Student::displayLoad() {
-
+void Student::displayLoad()
+{
 	this->studentSchedule.displayLoad();
 }
 
