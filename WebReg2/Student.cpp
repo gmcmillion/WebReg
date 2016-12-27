@@ -159,7 +159,6 @@ void Student::enroll()
 	}
 	//write linked list to text file when done enrolling
 	classList.writeListToFile();
-
 }
 
 //Drop Course

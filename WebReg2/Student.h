@@ -2,7 +2,6 @@
 #ifndef Student_h
 #define Student_h
 
-#include <string>
 #include "CourseList.h"
 
 class Student
@@ -14,10 +13,8 @@ class Student
 		int maxUnitsAllowed;
 		int currentUnitsEnrolled;
 		CourseList classList;
-		string userLoginName; // <--- used to compare to map's string value
-		string passCode; // <--- consider using this for map
-		//map would look like map<string, Student> where string is username and student is the student's record
-		// if map<string, string> is true, then proceed to check map<string, Student>
+		string userLoginName; // <--- used to compare to value in vector
+		string passCode; // <--- used as key in map
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();

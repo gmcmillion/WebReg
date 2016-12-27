@@ -4,15 +4,16 @@ john jay
 54321
 16
 0
-6D Discrete Math for CS
-36534
-Dis
+6B Boolean Alg. & Logic
+36520
+Lec
+A
 4
-0
-IRANI, S.
-MW 8:00 - 8:50p
-ICS 174
-100
-5
+HAYES, W.
+TuTh 3:30 - 4:50p
+EH 1200
+Tue, Mar 21, 4:00-6:00pm
+320
+11
 0
 OPEN
