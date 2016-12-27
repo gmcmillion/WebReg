@@ -260,6 +260,7 @@ void CourseList::searchCoursetoDisenroll(string courseCode) {
 		if (courseCode == traversePtr->course->getCourseNum())
 		{
 			traversePtr->course->disenrollStudent();
+			cout << "Successfully dropped course: " << courseCode << endl;
 			exist = true;
 		}
 
@@ -290,8 +291,8 @@ bool CourseList::removeCourseFromLoad(string courseCode){
 		delete head;
 		head = nullptr;
 
-		cout << "Successfully dropped course: " << courseCode << endl;
-
+		std::cout << "Course Dropped" << std::endl;
+		
 		return true;
 	}
 	//if item is first in bucket, but bucket has more than one item

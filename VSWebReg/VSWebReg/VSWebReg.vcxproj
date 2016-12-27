@@ -111,7 +111,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\WebReg2\CourseList.cpp" />
-    <ClCompile Include="..\..\WebReg2\DeptCourse.cpp" />
     <ClCompile Include="..\..\WebReg2\InterfaceFunctions.cpp" />
     <ClCompile Include="..\..\WebReg2\main.cpp" />
     <ClCompile Include="..\..\WebReg2\Student.cpp" />
