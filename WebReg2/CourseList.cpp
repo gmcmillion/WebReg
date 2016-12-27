@@ -273,20 +273,62 @@ void CourseList::searchCoursetoDisenroll(string courseCode) {
 	}
 }
 
-//find course student wants to enroll in
-bool CourseList::removeCourseFromLoad(string courseCode){
-
+//Find course student wants to drop
+bool CourseList::removeCourseFromLoad(string courseCode)
+{
+    ListNode* nodePtr;              //To traverse the list
+    ListNode* previousNode = NULL;  //To point to the previous node
+    
+    //If list is empty, do nothing
+    if(!head)
+    {
+        std::cout << "You have no classes to drop." << std::endl;
+        return false;
+    }
+    //Determine if the first node is the one
+    if(head->course->getCourseNum() == courseCode)
+    {
+        nodePtr = head->next;   //assign nodePtr to the next node
+        cout << "Dropped " << head->course->getCourseNum() << endl;
+        delete head;            //delete the head
+        head = nodePtr;         //assign head the next pointer
+        return true;
+    }
+    else
+    {
+        nodePtr = head;     //initialize nodePtr to head of list
+        
+        //skip all nodes whose courseCode is not equal to argument
+        while (nodePtr != NULL && nodePtr->course->getCourseNum() != courseCode)
+        {
+            previousNode = nodePtr;
+            nodePtr = nodePtr->next;
+        }
+        if (nodePtr)    //if found
+        {
+            previousNode->next = nodePtr->next;
+            cout << "Dropped " << nodePtr->course->getCourseNum() << endl;
+            delete nodePtr;
+            return true;
+        }
+    }
+    cout << "You are not enrolled in " << courseCode << endl;
+    return false;
+}
+/*
+{
 	ListNode* delPtr;
 	ListNode* NextNode;
 	ListNode* CurrentNode;
 
 	//if bucket is empty
-	if (head == nullptr) {
+	if (head == nullptr)
+    {
 		std::cout << "You have no classes to drop." << std::endl;
 	}
 	//if one one item exist in bucket
-	else if (head->course->getCourseNum() == courseCode && head->next == nullptr){
-
+	else if (head->course->getCourseNum() == courseCode && head->next == nullptr)
+    {
 		delete head;
 		head = nullptr;
 
@@ -295,8 +337,8 @@ bool CourseList::removeCourseFromLoad(string courseCode){
 		return true;
 	}
 	//if item is first in bucket, but bucket has more than one item
-	else if (head->course->getCourseNum() == courseCode) {
-
+	else if (head->course->getCourseNum() == courseCode)
+    {
 		NextNode = head->next;
 		CurrentNode = head;
 
@@ -308,19 +350,24 @@ bool CourseList::removeCourseFromLoad(string courseCode){
 		std::cout << "Course Dropped" << std::endl;
 		return true;
 	}
-	else {
+	else
+    {
 		//more than one node exist in bucket
 		NextNode = head->next;
 		CurrentNode = head;
 
-		while (NextNode != nullptr && NextNode->course->getCourseNum() != courseCode) {
+		//Traverse list looking for matching course code
+        while ((NextNode != nullptr) && (NextNode->course->getCourseNum() != courseCode))
+        {
 			CurrentNode = NextNode;
 			NextNode = CurrentNode->next;
 		}
-		if (CurrentNode == nullptr || CurrentNode->course->getCourseNum() != courseCode) {
+		if ((CurrentNode == nullptr) && (CurrentNode->course->getCourseNum() != courseCode))
+        {
 			std::cout << "Course Not Found" << std::endl;
 		}
-		else {
+		else
+        {
 			//Set delete ptr to struct to be deleted and rechain
 			delPtr = NextNode;
 			NextNode = NextNode->next;
@@ -332,3 +379,5 @@ bool CourseList::removeCourseFromLoad(string courseCode){
 	}
 	return false;
 }
+*/
+

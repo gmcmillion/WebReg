@@ -176,14 +176,17 @@ void Student::dropCourse()
 		cout << "\nEnter the course number you wish to drop:" << endl;
 		cin >> num;
 
-		validCourse = studentSchedule.removeCourseFromLoad(num);
+        //Drop course, and return true(dropped) or false(didnt drop)
+        validCourse = studentSchedule.removeCourseFromLoad(num);
 		
-		if (validCourse) {
+		//If validCourse is true, decrement the list
+        if (validCourse)
+        {
 			//drop class from list
 			classList.searchCoursetoDisenroll(num);
 		}
 
-		cout << "Would you like to drop  another course? (Y/N)" << endl;
+		cout << "Would you like to drop another course? (Y/N)" << endl;
 		cin >> choice;
 
 		//Input verification
