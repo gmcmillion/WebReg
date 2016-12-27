@@ -37,10 +37,13 @@ class CourseList
 		void displayAll();
 
 		//Display each course the student has signed up for
-		void CourseList::displayLoad();
+		void displayLoad();
 
 		//this rewrites the file essentially "modifying it".
 		void writeListToFile();
+
+		//this writes the students schedule to file
+		void writeListToFile(string, string, string, int, int, int);
     
         //Destructor
 		~CourseList();

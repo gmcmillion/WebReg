@@ -58,7 +58,7 @@ void CourseList::displayAll()
 	string courseTitle = "";
 	ListNode* prevPtr = nullptr;
 	ListNode* traversePtr = head;
-	cout << "Here are all the courses:\n" << endl;
+	cout << "\n------------ Available Courses ------------\n";
 
 	//print the first course in the node
 	if (traversePtr != nullptr) {
@@ -101,7 +101,7 @@ void CourseList::displayAll()
 //Display each course the student has signed up for
 void CourseList::displayLoad()
 {
-	cout << "\nHere are your enrolled classes:" << endl;
+	cout << "\n-------- Enrolled Courses --------\n";
 
 	//Traverse the list
 	for (ListNode * temp = head; temp != NULL; temp = temp->next)
@@ -142,7 +142,57 @@ void CourseList::writeListToFile()
 		outFile << traversePtr->course->getWaitListed()				<< endl;
 		outFile << traversePtr->course->getStatus()					<< endl;
 
-		if (traversePtr->next != nullptr) {       //<--- this fixes the bug where we were
+		if (traversePtr->next != nullptr) {       //this fixes the bug where we were
+			outFile << emptyLine << endl;		  //printing the same course multiple times.
+		}										  //now we can rewrite to the same file safely
+
+		traversePtr = traversePtr->next;
+	}
+
+	outFile.close();
+}
+
+
+void CourseList::writeListToFile(string loginName, string passCode, string name, int id, int maxUnits, int currentUnit)
+{
+	string emptyLine = "";
+	ofstream outFile;
+	outFile.open(loginName + ".txt");
+
+	outFile << loginName << endl;
+	outFile << passCode << endl;
+	outFile << name << endl;
+	outFile << id << endl;
+	outFile << maxUnits << endl;
+	outFile << currentUnit << endl;
+
+
+	ListNode* traversePtr = head;
+
+	//this loop traverses through the list while writing to the file
+	while (traversePtr != nullptr) {
+
+		outFile << traversePtr->course->getClassName() << endl;
+		outFile << traversePtr->course->getCourseNum() << endl;
+		outFile << traversePtr->course->getType() << endl;
+		outFile << traversePtr->course->getSection() << endl;
+		outFile << traversePtr->course->getUnits() << endl;
+		outFile << traversePtr->course->getProf() << endl;
+		outFile << traversePtr->course->getTime() << endl;
+		outFile << traversePtr->course->getLocation() << endl;
+
+		//conditional to handle courses without final exams
+		if (traversePtr->course->getFinalDateTime().size() > 6) {
+			outFile << traversePtr->course->getFinalDateTime() << endl;
+
+		}
+
+		outFile << traversePtr->course->getmaxEnrollment() << endl;
+		outFile << traversePtr->course->getcurrentEnrollment() << endl;
+		outFile << traversePtr->course->getWaitListed() << endl;
+		outFile << traversePtr->course->getStatus() << endl;
+
+		if (traversePtr->next != nullptr) {       //this fixes the bug where we were
 			outFile << emptyLine << endl;		  //printing the same course multiple times.
 		}										  //now we can rewrite to the same file safely
 

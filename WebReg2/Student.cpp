@@ -2,22 +2,35 @@
 #include <fstream>
 
 //Constructor
-Student::Student(string n, int i) : name(n), idNum(i)
+Student::Student(string n, int i) : name(n), idNum(i), maxUnitsAllowed(16), currentUnitsEnrolled(0)
 {
-	populateList();
+	populateList("ICS_Classes.txt");
 }
 
-Student::Student() 
+Student::Student() : name(""), idNum(0), maxUnitsAllowed(16), currentUnitsEnrolled(0)
 {
-	populateList();
+	populateList("ICS_Classes.txt");
+}
+
+Student::~Student() {
+
+	studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
 }
 
 //setters
-void Student::setName(string input) {
+void Student::setName(const string& input) {
 	name = input;
 }
 
-void Student::setID(int input) {
+void Student::setUserLogin(const string& input) {
+	userLoginName = input;
+}
+
+void Student::setPassCode(const string& input) {
+	passCode = input;
+}
+
+void Student::setID(const int& input) {
 	idNum = input;
 }
 
@@ -32,17 +45,21 @@ int Student::getIdNum()
 	return idNum;
 }
 
+string Student::getLogin() {
+	return userLoginName;
+}
+
 //populate instance variables linked list... consider making linked list a static variable
-void Student::populateList() {
+void Student::populateList(string fileName) {
 	string
 		courseName, courseNum, type, section,
 		units, professor, time, location,
 		finalDateTime, maxCapacity, currentEnrollment,
 		waitListed, status, emptySpace, name;
 
-	ifstream inputFile("ICS_Classes.txt");      //Input file
+	ifstream inputFile(fileName);      //Input file
 
-	while (!inputFile.eof())
+	while (true)
 	{
 		getline(inputFile, courseName);
 		getline(inputFile, courseNum);
@@ -80,6 +97,9 @@ void Student::populateList() {
 			currentEnrollment, waitListed, status);				//Create DeptCourse object
 
 		classList.add(&d);	                                //Add DeptCourse to the CourseList
+
+		if (inputFile.eof()) break; // if the file is the last line
+
 	}
 
 	//Close file after populating linked list
