@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\WebReg2\InterfaceFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\WebReg2\DeptCourse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\WebReg2\Course.h">
