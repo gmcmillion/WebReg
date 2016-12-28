@@ -12,8 +12,8 @@ class Student
 		int maxUnitsAllowed;
 		int currentUnitsEnrolled;
 		CourseList classList;
-		string userLoginName; //Compare to value in vector
-		string passCode; //Used as key in map
+		string userLoginName;   //Compare to value in vector
+		string passCode;        //Used as key in map
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();

@@ -12,35 +12,45 @@ Student::Student() : name(""), idNum(0), maxUnitsAllowed(16), currentUnitsEnroll
 	populateList("ICS_Classes.txt");
 }
 
-//setters
-void Student::setName(const string& input) {
+//Set name
+void Student::setName(const string& input)
+{
 	name = input;
 }
 
-void Student::setUserLogin(const string& input) {
+//Set User Login
+void Student::setUserLogin(const string& input)
+{
 	userLoginName = input;
 }
 
-void Student::setPassCode(const string& input) {
+//Set passcode
+void Student::setPassCode(const string& input)
+{
 	passCode = input;
 }
 
-void Student::setID(const int& input) {
+//Set ID
+void Student::setID(const int& input)
+{
 	idNum = input;
 }
 
-//Getters
+//Get name
 string Student::getName()
 {
 	return name;
 }
 
+//Get Id Num
 int Student::getIdNum()
 {
 	return idNum;
 }
 
-string Student::getLogin() {
+//Get Login
+string Student::getLogin()
+{
 	return userLoginName;
 }
 

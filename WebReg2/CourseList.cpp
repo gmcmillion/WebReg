@@ -237,8 +237,9 @@ bool CourseList::searchCoursetoEnroll(string courseCode) {
 	return false;
 }
 
-DeptCourse CourseList::courseToAdd(string courseCode) {
-
+//Find Course to add from linked list
+DeptCourse CourseList::courseToAdd(string courseCode)
+{
 	ListNode* traversePtr = head;
 
 	while (courseCode != traversePtr->course->getCourseNum()) 
@@ -249,9 +250,9 @@ DeptCourse CourseList::courseToAdd(string courseCode) {
 	return *traversePtr->course;   //return a copy of that deptcourse object
 }
 
-//find course student wants to enroll in
-void CourseList::searchCoursetoDisenroll(string courseCode) {
-
+//Find course student wants to drop
+void CourseList::searchCoursetoDisenroll(string courseCode)
+{
 	ListNode* traversePtr = head;
 	bool exist = false;
 

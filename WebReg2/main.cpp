@@ -29,7 +29,7 @@ int main()
             quitProgram = true;
 	}
 
-	//deallocate point objects in map
+	//Deallocate objects in map
 	for (auto itr = testMap.begin(); itr != testMap.end(); itr++)
 	{
 		delete itr->second;

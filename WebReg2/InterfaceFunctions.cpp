@@ -126,6 +126,7 @@ char menu()
 	return opt;
 }
 
+//Menu Loop
 void menuLoop(Student* x)
 {
 	//Variables
@@ -165,7 +166,8 @@ void menuLoop(Student* x)
 	}
 }
 
-void setUpUserVector(vector<string>& userNameList) {
+void setUpUserVector(vector<string>& userNameList)
+{
 	ifstream inputFile("users.txt");      //Input file
 
 	while (true) {
@@ -182,8 +184,8 @@ void setUpUserVector(vector<string>& userNameList) {
 	inputFile.close();
 }
 
-map<string, Student*> setUpMap(vector<string>& userNameList, map<string, Student*> testMap) {
-	
+map<string, Student*> setUpMap(vector<string>& userNameList, map<string, Student*> testMap)
+{	
 	for (auto i : userNameList) {				// access by value, the type of i is int
 
 		ifstream inputFile(i + ".txt");			//Input file
