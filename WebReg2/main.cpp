@@ -12,7 +12,7 @@ int main()
 	vector<string> userNameList;
 	
     setUpUserVector(userNameList);
-    
+
 	testMap = setUpMap(userNameList, testMap);
 
 	cout << "----- Welcome to UCI WebReg -----\n" << endl;

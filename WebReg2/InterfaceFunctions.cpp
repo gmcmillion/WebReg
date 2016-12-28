@@ -284,27 +284,27 @@ void getLogin(vector<string>& userNameList, map<string, Student*> testMap) {
 	cout << "Enter password: ";
 	getline(cin, passWord);
 
+	bool found = false;
 	for (auto vectorIterator : userNameList) {
 
 		/*
 		check if loginName is part of the student accounts txt file
-		if yes
 		check if the password inputed is mapped to an object
-		if yes
 		check if that object matches the login name
 		if yes we found the right account
 		*/
-		if ((vectorIterator == loginName) && testMap.find(passWord) != testMap.end()) {
-			if (testMap[passWord]->getLogin() == loginName) {
+		if ((vectorIterator == loginName) 
+			&& testMap.find(passWord) != testMap.end()
+			&& (testMap[passWord]->getLogin() == loginName)) {
+				
 				cout << "\nWelcome back: " << testMap[passWord]->getName() << endl;
 				menuLoop(testMap[passWord]);
-				break;
-			}
-		}
-		else {
-			//not found
-			cout << "Not Found" << endl;
-			//add return statement to exit for loop
-		}
+				found = true;		
+		}	
+		if (found)
+			break;
+	}
+	if (!found) {
+		cout << "\nIncorrect Login\n" << endl;
 	}
 }
