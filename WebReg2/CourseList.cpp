@@ -215,25 +215,16 @@ void CourseList::writeListToFile(string loginName, string passCode, string name,
 bool CourseList::searchCoursetoEnroll(string courseCode) {
 
     ListNode* traversePtr = head;
-    bool exists = false;
 
 	while (traversePtr != nullptr) {
 
 		if (courseCode == traversePtr->course->getCourseNum())
         {
 			traversePtr->course->enrollStudentInCourse();
-            cout << "Enrolled in " << courseCode << endl;
-            exists = true;
 			return true;
         }
 		traversePtr = traversePtr->next;
 	}
-    
-    //Input validation for courses codes that dont exist
-    if (!exists)
-    {
-        cout << "Course " << courseCode << " does not exist" << endl;
-    }
 	return false;
 }
 

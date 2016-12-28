@@ -13,6 +13,20 @@ HAYES, W.
 MW 3:00 - 3:50p
 SSL 248
 110
-15
+18
+0
+OPEN
+
+4 Human Factors/Web
+36500
+Lec
+A
+4
+KOBSA, A.
+MW 6:30 - 7:50p
+HIB 100
+Fri, Mar 24, 7:00-9:00pm
+200
+16
 0
 OPEN

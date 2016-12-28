@@ -182,12 +182,21 @@ void Student::enroll()
 
 		//Sign student up for class
 		validCourse = classList.searchCoursetoEnroll(num);
-		if (validCourse) {
+		if (validCourse && studentSchedule.searchCoursetoEnroll(num) == false) {
 			//get class matching that course code, and add it into the student schedule
 			DeptCourse x = classList.courseToAdd(num);
 			studentSchedule.add(&x);
+
+			cout << "\nEnrolled in: " << num << "\n"<< endl;
+
 			//now rewrite students file to reflect newly added course
 			studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
+		}
+		else if (studentSchedule.searchCoursetoEnroll(num) == true){
+			cout << "\nAlready enrolled in course\n" << endl;
+		}
+		else {
+			cout << "\nCourse does not exist\n" << endl;
 		}
         cin.ignore();
 		cout << "Would you like to enroll in another course? (Y/N)" << endl;
