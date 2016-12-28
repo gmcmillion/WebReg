@@ -1,6 +1,5 @@
 #include "Student.h"
 #include "InterfaceFunctions.h"
-
 using namespace std;
 
 int main()
@@ -23,19 +22,11 @@ int main()
 		//Get Student option
         studentOption = startUpMenu();
 
-		switch (studentOption)
-		{
-		case 'A':
-		case 'a':
-				  getLogin(userNameList, testMap);
-				  break;
-		case 'E':
-		case 'e': 
-				  quitProgram = true;
-				  return 0;
-		
-		default: cout << "\nThat is an invalid option, try again\n\n";
-		}
+        //If user selects 'A', login, else quit program
+        if(studentOption == 'A')
+            getLogin(userNameList, testMap);
+        else
+            quitProgram = true;
 	}
 
 	//deallocate point objects in map

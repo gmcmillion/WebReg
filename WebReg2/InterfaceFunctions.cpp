@@ -38,7 +38,8 @@ char validateStartUp(string str)
         
         option = validateNumOfChar(str);
     }
-    return option;
+
+    return toupper(option);
 }
 
 //Validate for more than one char in input for main menu
@@ -79,7 +80,7 @@ char validateMenu(string str)
         //Check number of char entered
         option = validateMenuNumChar(str);
     }
-    return option;
+    return toupper(option);
 }
 
 //Startup menu
