@@ -11,8 +11,14 @@ char menu();
 //display login menu
 char startUpMenu();
 
+//Validate for more than one char in input
+char validateNumOfChar(string str);
+
+//Validate for more than one char in input for main menu
+char validateMenuNumChar(string str);
+
 //Validate input
-char validate(string str);
+char validateStartUp(string str);
 
 //Validate menu input
 char validateMenu(string str);

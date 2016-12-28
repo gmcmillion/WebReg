@@ -20,9 +20,8 @@ int main()
 
 	while (!quitProgram) 
 	{
-
-		studentOption = startUpMenu();
-		cin.ignore();
+		//Get Student option
+        studentOption = startUpMenu();
 
 		switch (studentOption)
 		{

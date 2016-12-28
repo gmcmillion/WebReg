@@ -1,8 +1,9 @@
 #include "InterfaceFunctions.h"
 #include <fstream>
+#include <string>
 
-//Validate input
-char validate(string str)
+//Validate for more than one char in input
+char validateNumOfChar(string str)
 {
     //Variable
     char option;
@@ -11,19 +12,51 @@ char validate(string str)
     while (str.length() > 1)
     {
         cout << "INVALID INPUT: Enter one character, either A or E\n";
-        cin >> str;
+        getline(cin, str);
     }
     
     //Initialize our char (string to char)
     option = str[0];
     
+    return option;
+}
+
+//Validate input
+char validateStartUp(string str)
+{
+    //Variable
+    char option;
+    
+    //Check for multiple characters
+    option = validateNumOfChar(str);
+    
     //Loop for input validation, also convert option to upper case char
     while (toupper(option) != 'A' && toupper(option) != 'E')
     {
         cout << "INVALID INPUT: Enter either A or E\n";
-        cin >> str;
-        option = validate(str);
+        getline(cin, str);
+        
+        option = validateNumOfChar(str);
     }
+    return option;
+}
+
+//Validate for more than one char in input for main menu
+char validateMenuNumChar(string str)
+{
+    //Variable
+    char option;
+    
+    //Is input more than 1 character?
+    while (str.length() > 1)
+    {
+        cout << "INVALID INPUT: Enter one character, either A, B, C, D, or E\n";
+        getline(cin, str);
+    }
+    
+    //Initialize our char (string to char)
+    option = str[0];
+    
     return option;
 }
 
@@ -33,23 +66,18 @@ char validateMenu(string str)
     //Variable
     char option;
     
-    //Is input more than 1 character?
-    while (str.length() > 1)
-    {
-        cout << "INVALID INPUT: Enter one character, either A, B, C, D, or E\n";
-        cin >> str;
-    }
-    
-    //Initialize our char (string to char)
-    option = str[0];
+    //Check number of char entered
+    option = validateMenuNumChar(str);
     
     //Loop for input validation
     while (toupper(option) != 'A' && toupper(option) != 'B' && toupper(option) != 'C'
         && toupper(option) != 'D' && toupper(option) != 'E')
     {
         cout << "INVALID INPUT: Enter either A, B, C, D, or E\n";
-        cin >> str;
-        option = validateMenu(str);
+        getline(cin, str);
+    
+        //Check number of char entered
+        option = validateMenuNumChar(str);
     }
     return option;
 }
@@ -65,10 +93,10 @@ char startUpMenu()
     cout << "Please select an option below" << endl;
     cout << "A. Login" << endl;
     cout << "E. Exit Program" << endl;
-    cin >> input;
+    getline(cin, input);
     
     //Input validation
-    opt = validate(input);
+    opt = validateStartUp(input);
     
     return opt;
 }
@@ -89,7 +117,7 @@ char menu()
 	cout << "D. View current course load" << endl;
 	cout << "E. Logout" << endl;
 	cout << "Enter either A, B, C, D, or E " << endl;
-	cin >> input;
+    getline(cin, input);
 
     //Input validation
     opt = validateMenu(input);
