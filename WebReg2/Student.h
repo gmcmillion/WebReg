@@ -24,9 +24,6 @@ class Student
         //Constructor
 		Student(string n, int i);
 		Student();
-
-		//Destructor
-		~Student();
 		
 		//Setters
 		void setName(const string& name);

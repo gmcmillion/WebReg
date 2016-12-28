@@ -5,15 +5,14 @@ john jay
 16
 0
 6B Boolean Alg. & Logic
-36520
-Lec
-A
-4
+36521
+Dis
+1
+0
 HAYES, W.
-TuTh 3:30 - 4:50p
-EH 1200
-Tue, Mar 21, 4:00-6:00pm
-320
-11
+MW 3:00 - 3:50p
+SSL 248
+110
+15
 0
 OPEN

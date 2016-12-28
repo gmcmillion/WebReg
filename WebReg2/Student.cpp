@@ -12,11 +12,6 @@ Student::Student() : name(""), idNum(0), maxUnitsAllowed(16), currentUnitsEnroll
 	populateList("ICS_Classes.txt");
 }
 
-Student::~Student() {
-
-	studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
-}
-
 //setters
 void Student::setName(const string& input) {
 	name = input;
@@ -144,6 +139,9 @@ void Student::enroll()
 			//get class matching that course code, and add it into the student schedule
 			DeptCourse x = classList.courseToAdd(num);
 			studentSchedule.add(&x);
+			//now rewrite students file to reflect newly added course
+			studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
+
 		}
 
 		cout << "Would you like to enroll in another course? (Y/N)" << endl;
@@ -187,6 +185,10 @@ void Student::dropCourse()
         {
 			//drop class from list
 			classList.searchCoursetoDisenroll(num);
+
+			//rewrite students file to reflect dropped course
+			studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
+
 		}
 
 		cout << "Would you like to drop another course? (Y/N)" << endl;
