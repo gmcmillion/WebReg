@@ -50,5 +50,8 @@ class Student
 
 		//Display each course the student has signed up for
 		void displayLoad();
+    
+        //Input validation
+        char validateYesOrNo(string str);
 };
 #endif

@@ -118,17 +118,54 @@ void Student::displayLoad()
 	this->studentSchedule.displayLoad();
 }
 
+//Input validation
+char Student::validateYesOrNo(string str)
+{
+    //Variable
+    char option;
+    
+    //Check number of char entered
+    while (str.length() > 1)
+    {
+        cout << "INVALID INPUT: Enter one character, Y or N\n";
+        getline(cin, str);
+    }
+    
+    //Initialize our char (string to char)
+    option = str[0];
+    
+    //Loop for input validation
+    while (option != 'Y' && option != 'N' && option != 'y' && option != 'n' )
+    {
+        cout << "INVALID INPUT: Enter either Y or N\n";
+        getline(cin, str);
+    
+        //Check number of char entered
+        while (str.length() > 1)
+        {
+            cout << "INVALID INPUT: Enter one character, Y or N\n";
+            getline(cin, str);
+        }
+    
+        //Initialize our char (string to char)
+        option = str[0];
+    }
+    
+    return toupper(option);
+}
+
 //Enroll
 void Student::enroll()
 {
 	bool enroll = true;
 	bool validCourse = false;
+    string input;
+    char choice;
 
 	//Loop to enroll in classes
 	while (enroll)
 	{
 		string num;
-		char choice;
 
 		cout << "\nPlease sign up for a course using a the 5 digit course number" << endl;
 		cin >> num;
@@ -141,21 +178,16 @@ void Student::enroll()
 			studentSchedule.add(&x);
 			//now rewrite students file to reflect newly added course
 			studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
-
 		}
-
+        cin.ignore();
 		cout << "Would you like to enroll in another course? (Y/N)" << endl;
-		cin >> choice;
-
-		//Input verification
-		while (choice != 'n' && choice != 'N' && choice != 'y' && choice != 'Y')
-		{
-			cout << "Invalid input: Please enter either Y or N\n";
-			cin >> choice;
-		}
-
+		getline(cin, input);
+        
+        //Input Validation
+        choice = validateYesOrNo(input);
+        
 		//Break while loop if user chooses N or n
-		if (choice == 'N' || choice == 'n')
+		if (choice == 'N')
 			enroll = false;
 	}
 	//write linked list to text file when done enrolling
@@ -166,13 +198,14 @@ void Student::enroll()
 void Student::dropCourse()
 {
 	bool drop = true;
+    bool validCourse = false;
+    string input;
+    char choice;
 
 	//Loop to enroll in classes
 	while (drop)
 	{
 		string num;
-		char choice;
-		bool validCourse = false;
 
 		cout << "\nEnter the course number you wish to drop:" << endl;
 		cin >> num;
@@ -188,21 +221,17 @@ void Student::dropCourse()
 
 			//rewrite students file to reflect dropped course
 			studentSchedule.writeListToFile(userLoginName, passCode, name, idNum, maxUnitsAllowed, currentUnitsEnrolled);
-
 		}
+        
+        cin.ignore();   //Clear buffer
+        cout << "Would you like to drop another course? (Y/N)" << endl;
+		getline(cin, input);
 
-		cout << "Would you like to drop another course? (Y/N)" << endl;
-		cin >> choice;
-
-		//Input verification
-		while (choice != 'n' && choice != 'N' && choice != 'y' && choice != 'Y')
-		{
-			cout << "Invalid input: Please enter either Y or N\n";
-			cin >> choice;
-		}
+        //Input Validation
+        choice = validateYesOrNo(input);
 
 		//Break while loop if user chooses N or n
-		if (choice == 'N' || choice == 'n')
+		if (choice == 'N')
 			drop = false;
 	}
 

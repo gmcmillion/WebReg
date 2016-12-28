@@ -5,43 +5,14 @@ john jay
 16
 0
 6D Discrete Math for CS
-36530
-Lec
-A
-4
+36533
+Dis
+3
+0
 IRANI, S.
-MWF 2:00 - 2:50p
-SSLH 100
-Fri, Mar 24, 1:30-3:30pm
-399
-4
-0
-OPEN
-
-4 Human Factors/Web
-36500
-Lec
-A
-4
-KOBSA, A.
-MW 6:30 - 7:50p
-HIB 100
-Fri, Mar 24, 7:00-9:00pm
-200
-15
-0
-OPEN
-
-6B Boolean Alg. & Logic
-36520
-Lec
-A
-4
-HAYES, W.
-TuTh 3:30 - 4:50p
-EH 1200
-Tue, Mar 21, 4:00-6:00pm
-320
-13
+MW 7:00 - 7:50p
+ICS 174
+100
+6
 0
 OPEN
