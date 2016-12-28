@@ -120,6 +120,7 @@ void CourseList::displayLoad()
 	}
 }
 
+//Updates the ICS_Classes.txt with any changes
 void CourseList::writeListToFile()
 {
 	string emptyLine = "";
@@ -161,7 +162,7 @@ void CourseList::writeListToFile()
 	outFile.close();
 }
 
-
+//Writes the students schedule to file
 void CourseList::writeListToFile(string loginName, string passCode, string name, int id, int maxUnits, int currentUnit)
 {
 	string emptyLine = "";
@@ -174,7 +175,6 @@ void CourseList::writeListToFile(string loginName, string passCode, string name,
 	outFile << id << endl;
 	outFile << maxUnits << endl;
 	outFile << currentUnit << endl;
-
 
 	ListNode* traversePtr = head;
 

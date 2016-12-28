@@ -5,16 +5,18 @@ using namespace std;
 
 int main()
 {
-	char studentOption;
+	//Variables
+    char studentOption;
 	bool quitProgram = false;
 
 	map<string, Student*> testMap;
 	vector<string> userNameList;
-
-	setUpUserVector(userNameList);
+	
+    setUpUserVector(userNameList);
+    
 	testMap = setUpMap(userNameList, testMap);
 
-	cout << "\nWelcome to UCI WebReg\n" << endl;
+	cout << "----- Welcome to UCI WebReg -----\n" << endl;
 
 	while (!quitProgram) 
 	{

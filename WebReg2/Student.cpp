@@ -6,7 +6,7 @@ Student::Student(string n, int i) : name(n), idNum(i), maxUnitsAllowed(16), curr
 {
 	populateList("ICS_Classes.txt");
 }
-
+//Default Constructor
 Student::Student() : name(""), idNum(0), maxUnitsAllowed(16), currentUnitsEnrolled(0)
 {
 	populateList("ICS_Classes.txt");
@@ -50,7 +50,8 @@ string Student::getLogin() {
 }
 
 //populate instance variables linked list... consider making linked list a static variable
-void Student::populateList(string fileName) {
+void Student::populateList(string fileName)
+{
 	string
 		courseName, courseNum, type, section,
 		units, professor, time, location,
@@ -106,11 +107,13 @@ void Student::populateList(string fileName) {
 	inputFile.close();
 }
 
-void Student::writeLinkedList() {
+void Student::writeLinkedList()
+{
 	classList.writeListToFile();
 }
 
-void Student::displayAll() {
+void Student::displayAll()
+{
 
 	this->classList.displayAll();
 }

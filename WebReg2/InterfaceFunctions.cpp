@@ -1,19 +1,76 @@
 #include "InterfaceFunctions.h"
 #include <fstream>
 
+//Validate input
+char validate(string str)
+{
+    //Variable
+    char option;
+    
+    //Is input more than 1 character?
+    while (str.length() > 1)
+    {
+        cout << "INVALID INPUT: Enter one character, either A or E\n";
+        cin >> str;
+    }
+    
+    //Initialize our char (string to char)
+    option = str[0];
+    
+    //Loop for input validation, also convert option to upper case char
+    while (toupper(option) != 'A' && toupper(option) != 'E')
+    {
+        cout << "INVALID INPUT: Enter either A or E\n";
+        cin >> str;
+        option = validate(str);
+    }
+    return option;
+}
+
+//Validate Menu input
+char validateMenu(string str)
+{
+    //Variable
+    char option;
+    
+    //Is input more than 1 character?
+    while (str.length() > 1)
+    {
+        cout << "INVALID INPUT: Enter one character, either A, B, C, D, or E\n";
+        cin >> str;
+    }
+    
+    //Initialize our char (string to char)
+    option = str[0];
+    
+    //Loop for input validation
+    while (toupper(option) != 'A' && toupper(option) != 'B' && toupper(option) != 'C'
+        && toupper(option) != 'D' && toupper(option) != 'E')
+    {
+        cout << "INVALID INPUT: Enter either A, B, C, D, or E\n";
+        cin >> str;
+        option = validateMenu(str);
+    }
+    return option;
+}
+
 //Startup menu
 char startUpMenu()
 {
 	//Variable
 	char opt;
-
-	//Startup Menu
-	cout << "Please select an option below" << endl;
-	cout << "A. Login" << endl;
-	cout << "E. Exit Program" << endl;
-	cin >> opt;
-
-	return opt;
+    string input;
+    
+    //Startup Menu
+    cout << "Please select an option below" << endl;
+    cout << "A. Login" << endl;
+    cout << "E. Exit Program" << endl;
+    cin >> input;
+    
+    //Input validation
+    opt = validate(input);
+    
+    return opt;
 }
 
 //Main menu
@@ -21,6 +78,7 @@ char menu()
 {
 	//Variable
 	char opt;
+    string input;
 
 	//Menu
 	cout << "\n---------- Main Menu ----------" << endl;
@@ -31,7 +89,10 @@ char menu()
 	cout << "D. View current course load" << endl;
 	cout << "E. Logout" << endl;
 	cout << "Enter either A, B, C, D, or E " << endl;
-	cin >> opt;
+	cin >> input;
+
+    //Input validation
+    opt = validateMenu(input);
 
 	return opt;
 }
@@ -56,11 +117,6 @@ void menuLoop(Student* x)
 			break;
 		case 'B':
 		case 'b': x->enroll();           //enroll in course
-										 /*
-										 /CAUSES BUG
-										 //WHEN YOU TRY TO DROP A COURSE RIGHT AFTER ENROLLING
-										 */
-
 			break;
 		case 'C':
 		case 'c': x->dropCourse();       //drop course

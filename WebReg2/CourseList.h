@@ -1,7 +1,6 @@
 //CourseList.h
 #ifndef COURSELIST_H
 #define COURSELIST_H
-
 #include "DeptCourse.h"
 
 class CourseList
@@ -18,20 +17,22 @@ class CourseList
         ListNode * head;
     
     public:
-        //No arg Constructor
+        //Constructor
 		CourseList();
     
         //Add Course to linked list
 		void add(DeptCourse * co);
 		
-		DeptCourse courseToAdd(string courseCode);
+        DeptCourse courseToAdd(string courseCode);
 
-		bool removeCourseFromLoad(string courseCode);
+		//Remove course from the list
+        bool removeCourseFromLoad(string courseCode);
 
-		//for now, search couse by the course code
+		//Search Course to enroll in
 		bool searchCoursetoEnroll(string courseCode);
 
-		void searchCoursetoDisenroll(string courseCode);
+		//Search Course to drop
+        void searchCoursetoDisenroll(string courseCode);
 
         //Display each course in the linked list
 		void displayAll();
@@ -39,10 +40,10 @@ class CourseList
 		//Display each course the student has signed up for
 		void displayLoad();
 
-		//this rewrites the file essentially "modifying it".
+		//Updates the ICS_Classes.txt with any changes
 		void writeListToFile();
 
-		//this writes the students schedule to file
+		//Writes the students schedule to file
 		void writeListToFile(string, string, string, int, int, int);
     
         //Destructor

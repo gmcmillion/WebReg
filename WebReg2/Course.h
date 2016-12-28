@@ -1,15 +1,13 @@
 //Course.h
 #ifndef COURSE_H
 #define COURSE_H
-
 #include <string>
 using namespace std;
 
 class Course
 {
     protected:
-        //course needs to change
-        //students enroll with courseCodes, not course names
+        //Member Variables
         string prof;
         string courseNumber;
         string className;
@@ -23,17 +21,19 @@ class Course
         //Virtual Functions for display
         virtual void display() = 0;   
     
-        //Getters
+        //Get prof
         string getProf()
         {
             return prof;
         }
     
+        //Get Course Number
         string getCourseNum()
         {
             return courseNumber;
         }
     
+        //Get Class name
         string getClassName()
         {
             return className;

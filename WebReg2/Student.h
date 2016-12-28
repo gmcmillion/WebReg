@@ -1,26 +1,25 @@
 //Student.h
 #ifndef Student_h
 #define Student_h
-
 #include "CourseList.h"
 
 class Student
 {
     private:
-		//Variables
+		//Member Variables
         string name;
         int idNum;
 		int maxUnitsAllowed;
 		int currentUnitsEnrolled;
 		CourseList classList;
-		string userLoginName; // <--- used to compare to value in vector
-		string passCode; // <--- used as key in map
+		string userLoginName; //Compare to value in vector
+		string passCode; //Used as key in map
 
 		//write linked list to text file (after student enrolls or drops)
 		void writeLinkedList();
 
     public:
-		CourseList studentSchedule; // <--- this should hold student class
+		CourseList studentSchedule; //Holds student class
 
         //Constructor
 		Student(string n, int i);
@@ -29,7 +28,7 @@ class Student
 		//Destructor
 		~Student();
 		
-		//setters
+		//Setters
 		void setName(const string& name);
 		void setID(const int& id);
 		void setUserLogin(const string& input);

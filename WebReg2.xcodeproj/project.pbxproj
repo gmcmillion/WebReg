@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				57F67D3A1E08FBB90005E5C3 /* main.cpp */,
-				5741B2DB1E11FEA600AC39D9 /* InterfaceFunctions.cpp */,
 				5741B2DC1E11FEA600AC39D9 /* InterfaceFunctions.h */,
+				5741B2DB1E11FEA600AC39D9 /* InterfaceFunctions.cpp */,
 				57F67D3E1E08FC1F0005E5C3 /* Course.h */,
 				57F67D3D1E08FBE70005E5C3 /* Student.h */,
 				577F713A1E0E11B5009E1E62 /* Student.cpp */,
